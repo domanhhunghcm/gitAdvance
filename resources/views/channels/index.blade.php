@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    @foreach($channelaaaaaa as $c)
+    <p>{{$c->name}}</p>
+    @endforeach
 </body>
 </html>

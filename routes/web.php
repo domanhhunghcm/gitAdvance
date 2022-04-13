@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\storeControl;
+use App\Http\Controllers\ChannelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/store', [storeControl::class, 'store']);
+Route::get('/displayChanel', [ChannelController::class, 'displayChanel']);
