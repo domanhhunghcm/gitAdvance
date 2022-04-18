@@ -8,6 +8,7 @@ use App\Billing\payMentImplement;
 use Illuminate\Support\Facades\View;
 use App\Models\channel;
 use App\Http\View\composer\channelComposer;
+use App\hungServiceFacade\hungService;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -36,7 +37,9 @@ class AppServiceProvider extends ServiceProvider
         // });
     
         // Using class based composers...
-        View::composer('channels.index', channelComposer::class);
-    
+        //View::composer('channels.index', channelComposer::class);
+        $this->app->singleton(hungProvider::class, function ($app) {
+            return new hungService("dohung1","dohun2","manhhung3");
+        });
     }
 }

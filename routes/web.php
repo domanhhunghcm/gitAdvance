@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\storeControl;
 use App\Http\Controllers\ChannelController;
+use App\hungServiceFacade\hungService;
+use App\hungServiceFacade\hungProvider;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,12 @@ Route::get('/', function () {
 });
 Route::get('/store', [storeControl::class, 'store']);
 Route::get('/displayChanel', [ChannelController::class, 'displayChanel']);
+Route::get('/hello', function ()
+{
+    $mail=new hungService("123","456","789");
+    $mail->hello("1","2");
+});
+Route::get("/testFacade",function ()
+{
+    hungProvider::hello("manhhung","dohung");
+});
