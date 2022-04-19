@@ -5,7 +5,7 @@ use App\Http\Controllers\storeControl;
 use App\Http\Controllers\ChannelController;
 use App\hungServiceFacade\hungService;
 use App\hungServiceFacade\hungProvider;
-
+use Illuminate\Support\Str;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +30,10 @@ Route::get('/hello', function ()
 Route::get("/testFacade",function ()
 {
     hungProvider::hello("manhhung","dohung");
+});
+Route::get("macroDohungmanhnha",function()
+{
+    //Str::dohungMacRo("manh hung do");
+    // echo "123";
+    Str::dohung2();
 });
