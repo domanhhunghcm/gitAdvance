@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\storeControl;
 use App\Http\Controllers\ChannelController;
+use App\Http\Controllers\monitorController;
 use App\hungServiceFacade\hungService;
 use App\hungServiceFacade\hungProvider;
 use Illuminate\Support\Str;
@@ -37,3 +38,4 @@ Route::get("macroDohungmanhnha",function()
     // echo "123";
     Str::dohung2();
 });
+Route::get("getName",[monitorController::class,"getName"]);
