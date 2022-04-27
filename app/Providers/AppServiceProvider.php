@@ -40,9 +40,9 @@ class AppServiceProvider extends ServiceProvider
     
         // Using class based composers...
         //View::composer('channels.index', channelComposer::class);
-        // $this->app->singleton(hungProvider::class, function ($app) {
-        //     return new hungService("dohung1","dohun2","manhhung3");
-        // });
+        $this->app->singleton(hungProvider::class, function ($app) {
+            return new hungService("dohung1","dohun2","manhhung3");
+        });
         // Str::macro("dohungMacRo",function($moji)
         // { dd(["moji"=>$moji]);
         //     return $moji;
