@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\storeControl;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\monitorController;
+use App\Http\Controllers\customers;
 use App\hungServiceFacade\hungService;
 use App\hungServiceFacade\hungProvider;
 use Illuminate\Support\Str;
@@ -39,3 +40,7 @@ Route::get("macroDohungmanhnha",function()
     Str::dohung2();
 });
 Route::get("getName",[monitorController::class,"getName"]);
+Route::get("getAll",[customers::class,"getAll"])->name("getAll");
+Route::get("getById/{idCus}",[customers::class,"getById"]);
+Route::get("updateById/{idUpdate}",[customers::class,"updateById"]);
+Route::get("deleteById/{id}",[customers::class,"deleteById"]);
